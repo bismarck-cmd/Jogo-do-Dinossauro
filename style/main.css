@@ -1,0 +1,112 @@
+body {
+    display: grid;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    border: 1px solid gray;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+#dino {
+    width: 42px;
+    height: 50px;
+    background-size: 42px 50px;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+#score {
+    background-size: 42px 50px;
+    position: relative;
+    top: 10px;
+    left: 520px;
+}
+
+.cactu {
+    width: 24px;
+    height: 50px;
+    background-size: 24px 50px;
+    position: absolute;
+    top: 150px;
+    left: 600px;
+}
+
+.alive {
+    background-image: url(../img/dino-character.png);
+}
+
+.dead {
+    background-image: url(../img/dino-dead.png);
+}
+
+.cactu-1 {
+    background-image: url(../img/cactus-1.png);
+}
+
+.cactu-2 {
+    background-image: url(../img/cactus-2.png);
+}
+
+.cactu-3 {
+    background-image: url(../img/cactus-3.png);
+}
+
+.dino-run {
+    animation-name: dino-run;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.jump {
+    animation-name: jump;
+    animation-duration: 0.2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-out;
+}
+
+.move {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dino-run {
+    from {
+        background-image: url(../img/dino-run-left.png);
+    }
+    to {
+        background-image: url(../img/dino-run-right.png);
+    }
+}
+
+@keyframes jump {
+    from {
+        top: 150px;
+    }
+
+    to {
+        top: 66.66px;
+    }
+}
+
+@keyframes move{
+    from {
+        left: 600px;
+    }
+    to {
+        left: -31px;
+    }
+}
